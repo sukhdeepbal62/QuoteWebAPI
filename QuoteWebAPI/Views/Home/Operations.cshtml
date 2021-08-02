@@ -1,0 +1,88 @@
+﻿<div class="text-center">
+    <h1 class="display-4">All Quotes <button class="btn btn-dark" data-toggle="modal" data-target="#add_quote">Add New Quote</button></h1>
+</div>
+<hr />
+<!-- Div For Display Quote Details -->
+<div class="row" id="data_row">
+
+</div>
+
+<!-- Add Quote Modal Dialog Box -->
+<div class="modal" tabindex="-1" role="dialog" id="add_quote">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title ">Add New Quote</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="quote_text">Enter Quote Text: </label>
+                        <textarea type="text" class="form-control" id="quote_text"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="rating">Enter Rating (1-5): </label>
+                        <input type="number" min="1" max="5" class="form-control" id="rating">
+                    </div>
+                    <div class="form-group" id="add_result">
+
+                    </div>
+                    <button type="button" onclick="saveQuote()" class="btn btn-dark">Save Quote Details</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Edit Quote Modal Dialog Box -->
+<div class="modal" tabindex="-1" role="dialog" id="edit_quote">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title ">Edit Quote Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="quote_text_edit">Enter Quote Text: </label>
+                        <textarea type="text" class="form-control" id="quote_text_edit"></textarea>
+                        <input type="hidden" id="quote_id" />
+                    </div>
+                    <div class="form-group">
+                        <label for="rating_edit">Enter Rating (1-5): </label>
+                        <input type="number" min="1" max="5" class="form-control" id="rating_edit">
+                    </div>
+                    <div class="form-group" id="edit_result">
+
+                    </div>
+                    <button type="button" onclick="updateQuote()" class="btn btn-dark">Save Quote Details</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/js/all_operation.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            loadQuotes();
+        });
+    </script>
+}

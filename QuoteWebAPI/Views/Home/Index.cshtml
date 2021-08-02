@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">All Quotes</h1>
+</div>
+<hr />
+<!-- Div For Display Quote Details -->
+<div class="row" id="data_row">
+
+</div>
+
+@section Scripts{
+    <script src="~/js/operation.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            loadQuotes();
+        });
+    </script>
+}
